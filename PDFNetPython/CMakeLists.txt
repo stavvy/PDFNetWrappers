@@ -22,7 +22,7 @@ if (PYTHONLIBS_FOUND)
     message(STATUS "Python include directory: ${PYTHON_INCLUDE_DIRS}")
     message(STATUS "Python library: ${PYTHON_LIBRARY}")
     set(PylibInfoOutput ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/PDFNetPyLibInfo )
-    file(WRITE ${PylibInfoOutput} "python${PYTHONLIBS_VERSION_STRING}") 
+    file(WRITE ${PylibInfoOutput} "python${PYTHONLIBS_VERSION_STRING}")
 else ()
     message(FATAL_ERROR "Cannot find Python libraries, please set the variables specified by the error message then try again.")
     return ()
@@ -110,7 +110,7 @@ configure_file(${PDFNetPython_SourcesDir}/PDFNetPython.py ${CMAKE_LIBRARY_OUTPUT
 # Installation rules
 
 install(
-    FILES ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/PDFNetPython.py ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/PDFNetPyLibInfo 
+    FILES ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/PDFNetPython.py ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/PDFNetPyLibInfo
     DESTINATION ${INSTALL_DESTINATION_LIB_DIR}
 )
 install(
