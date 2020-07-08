@@ -20,6 +20,8 @@ if (Python3_FOUND)
     message(STATUS "Python include directory: ${Python3_INCLUDE_DIRS}")
     message(STATUS "Python library: ${Python3_LIBRARIES}")
     set(PylibInfoOutput ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/PDFNetPyLibInfo )
+    message(STATUS "PylibInfoOutput  python${Python3_VERSION}")
+
     file(WRITE ${PylibInfoOutput} "python${Python3_VERSION}")
 else ()
     message(FATAL_ERROR "Cannot find Python libraries, please set the variables specified by the error message then try again.")
@@ -65,7 +67,7 @@ add_definitions(
 
 include_directories(
     ${PDFNetC_Include_Dir}
-    ${PYTHON_INCLUDE_DIRS}
+    ${Python3_INCLUDE_DIRS}
 )
 
 # The PDFNetPython project.
